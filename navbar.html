@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+  <div class="nav-left">
+    <button class="logo-btn" onclick="goPage('index.html')">Etsy</button>
+
+    <div class="dropdown">
+ <button class="nav-btn" onclick="toggleCategories(event)">
+  ☰ <span class="categories-text">Categories</span>
+</button>
+
+      <div class="dropdown-menu">
+        <button onclick="goPage('category-electronics.html')">Electronics</button>
+        <button onclick="goPage('category-fashion.html')">Fashion</button>
+        <button onclick="goPage('category-home.html')">Home Decor</button>
+        <button onclick="goPage('category-gifts.html')">Gifts</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="search-box">
+    <input type="text" placeholder="Search for anything" />
+    <button class="search-btn">🔍</button>
+  </div>
+
+  <div class="nav-right">
+    <button class="nav-btn" onclick="toggleDark()">🌙</button>
+    <button class="icon-btn">🔔</button>
+    <button class="icon-btn">👤</button>
+    <button class="icon-btn">🛒 </button>
+  </div>
+</nav>
+
+<div class="nav-links">
+  <button onclick="goPage('index.html')">🎁 Gifts</button>
+  <button onclick="goPage('top100.html')">Our Top 100 Gifts</button>
+  <button onclick="goPage('favourites.html')">Home Favourites</button>
+  <button onclick="goPage('fashion.html')">Fashion Finds</button>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Etsy Clone</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="navbar"></div>
+
+<section class="gift-guides">
+  <div class="gift-hero">
+    <h1>Etsy’s Best Gift Guides</h1>
+    <p>
+      Discover curated picks for every person and moment, straight from
+      extraordinary small shops.
+    </p>
+  </div>
+
+  <div class="gift-grid">
+    <div class="gift-item">
+  <a href="gifts-him.html">
+    <img src="./images/gifts1.webp" alt="Gifts for Him">
+    <span>Gifts for Him →</span>
+  </a>
+</div>
+    <div class="gift-item">
+  <a href="gifts-him.html">
+    <img src="./images/gifts1.webp" alt="Gifts for Him">
+    <span>Gifts for Him →</span>
+  </a>
+</div>
+    <div class="gift-item">
+  <a href="gifts-him.html">
+    <img src="./images/gifts1.webp" alt="Gifts for Him">
+    <span>Gifts for Him →</span>
+  </a>
+</div>
+    <div class="gift-item">
+  <a href="gifts-him.html">
+    <img src="./images/gifts1.webp" alt="Gifts for Him">
+    <span>Gifts for Him →</span>
+  </a>
+</div>
+    <div class="gift-item">
+  <a href="gifts-him.html">
+    <img src="./images/gifts1.webp" alt="Gifts for Him">
+    <span>Gifts for Him →</span>
+  </a>
+</div>
+    <div class="gift-item">
+  <a href="gifts-him.html">
+    <img src="./images/gifts1.webp" alt="Gifts for Him">
+    <span>Gifts for Him →</span>
+  </a>
+</div>
+    <div class="gift-item">
+  <a href="gifts-him.html">
+    <img src="./images/gifts1.webp" alt="Gifts for Him">
+    <span>Gifts for Him →</span>
+  </a>
+</div>
+    <div class="gift-item">
+  <a href="gifts-him.html">
+    <img src="./images/gifts1.webp" alt="Gifts for Him">
+    <span>Gifts for Him →</span>
+  </a>
+</div>
+    <div class="gift-item">
+  <a href="gifts-him.html">
+    <img src="./images/gifts1.webp" alt="Gifts for Him">
+    <span>Gifts for Him →</span>
+  </a>
+</div>
+    <div class="gift-item">
+  <a href="gifts-him.html">
+    <img src="./images/gifts1.webp" alt="Gifts for Him">
+    <span>Gifts for Him →</span>
+  </a>
+</div>
+    <div class="gift-item">
+  <a href="gifts-him.html">
+    <img src="./images/gifts1.webp" alt="Gifts for Him">
+    <span>Gifts for Him →</span>
+  </a>
+</div>
+    <div class="gift-item">
+  <a href="gifts-him.html">
+    <img src="./images/gifts1.webp" alt="Gifts for Him">
+    <span>Gifts for Him →</span>
+  </a>
+</div>
+    <div class="gift-item">
+  <a href="gifts-him.html">
+    <img src="./images/gifts1.webp" alt="Gifts for Him">
+    <span>Gifts for Him →</span>
+  </a>
+</div>
+    <div class="gift-item">
+  <a href="gifts-him.html">
+    <img src="./images/gifts1.webp" alt="Gifts for Him">
+    <span>Gifts for Him →</span>
+  </a>
+</div>
+    <div class="gift-item">
+  <a href="gifts-him.html">
+    <img src="./images/gifts1.webp" alt="Gifts for Him">
+    <span>Gifts for Him →</span>
+  </a>
+</div>
+</section>
+
+<!-- READY SECTION -->
+<section class="ready">
+  <h1 class="section-title">Ready-to-dispatch presents</h1>
+
+  <!-- FILTER BUTTON -->
+  <div class="filter-bar">
+    <button class="filter-btn" onclick="openFilter()">⚙️ Filters</button>
+  </div>
+
+  <!-- PRODUCTS GRID -->
+  <div class="products-grid" id="productsGrid"></div>
+</section>
+
+<!-- OVERLAY -->
+<div class="filter-overlay" id="filterOverlay" onclick="closeFilter()"></div>
+
+<!-- FILTER PANEL -->
+<!-- FILTER PANEL -->
+<div class="filter-panel" id="filterPanel">
+  <div class="filter-header">
+    <h3>Filters</h3>
+    <button onclick="closeFilter()">✕</button>
+  </div>
+
+  <div class="filter-section">
+    <h4>Price</h4>
+
+    <label>
+      <input type="radio" name="price" onclick="filterPrice(0,1000)">
+      Under ₹1000
+    </label>
+
+    <label>
+      <input type="radio" name="price" onclick="filterPrice(1000,3000)">
+      ₹1000 – ₹3000
+    </label>
+
+    <label>
+      <input type="radio" name="price" onclick="filterPrice(3000,8000)">
+      ₹3000 – ₹8000
+    </label>
+
+    <label>
+      <input type="radio" name="price" onclick="filterPrice(10000,Infinity)">
+      ₹10000 & above
+    </label>
+
+    <label>
+      <input type="radio" name="price" onclick="renderProducts(products,'productsGrid')">
+      All Products
+    </label>
+  </div>
+</div>
+
+
+
+<!-- last -->
+<!-- SECOND PRODUCTS SECTION -->
+<section class="ready">
+  <h1 class="section-title">Best-selling gifts they’ll love</h1>
+
+  <div class="filter-bar">
+    <button class="filter-btn"
+      onclick="openFilter('filterPanel2','overlay2')">
+      ⚙️ Filters
+    </button>
+  </div>
+
+  <div class="products-grid" id="productsGrid2"></div>
+</section>
+
+
+<!-- ===== ETSY FOOTER ===== -->
+<footer class="etsy-footer">
+
+  <!-- Gift Card Banner -->
+  <div class="giftcard-banner">
+    <div class="giftcard-text">
+      <h2>Shop Etsy gift cards</h2>
+      <p>Get them something one-of-a-kind in minutes, no guesswork needed.</p>
+      <a href="#">Pick a design →</a>
+    </div>
+   <div class="giftcard-img">
+  <img src="./images/navbarimg.webp" alt="Etsy Gift Cards">
+</div>
+
+  </div>
+
+  <!-- Newsletter -->
+  <div class="newsletter">
+    <p>
+      Yes! Send me exclusive offers, unique gift ideas, and personalised tips
+      for shopping and selling on Etsy.
+    </p>
+    <div class="newsletter-box">
+      <input type="email" placeholder="Enter your email">
+      <button>Subscribe</button>
+    </div>
+  </div>
+
+  <!-- Renewable Bar -->
+  <div class="renewable">
+    🌍 Etsy is powered by 100% renewable electricity.
+  </div>
+
+  <!-- Main Footer -->
+  <div class="footer-main">
+
+    <div class="footer-app">
+  <div class="etsy-box">Etsy</div>
+  <button class="app-btn">
+    Download the Etsy App
+  </button>
+</div>
+
+
+    <div class="footer-columns">
+      <div>
+        <h4>Shop</h4>
+        <a href="#">Gift cards</a>
+        <a href="#">Etsy Registry</a>
+        <a href="#">Sitemap</a>
+        <a href="#">Etsy blog</a>
+        <a href="#">Etsy United Kingdom</a>
+        <a href="#">Etsy Germany</a>
+        <a href="#">Etsy Canada</a>
+      </div>
+
+      <div>
+        <h4>Sell</h4>
+        <a href="#">Sell on Etsy</a>
+        <a href="#">Teams</a>
+        <a href="#">Forums</a>
+        <a href="#">Affiliates & Creators</a>
+      </div>
+
+      <div>
+        <h4>About</h4>
+        <a href="#">Etsy, Inc.</a>
+        <a href="#">Policies</a>
+        <a href="#">Investors</a>
+        <a href="#">Careers</a>
+        <a href="#">Press</a>
+        <a href="#">Impact</a>
+        <a href="#">Legal imprint</a>
+      </div>
+
+      <div>
+        <h4>Help</h4>
+        <a href="#">Help Centre</a>
+        <a href="#">Privacy settings</a>
+       <div class="socials">
+  <!-- Instagram -->
+  <a href="https://www.instagram.com/your_username" target="_blank" title="Instagram">
+    <img src="./images/instagram.png" alt="">
+  </a>
+ 
+  <!-- YouTube -->
+  <a href="https://www.youtube.com/" target="_blank" title="YouTube">
+    <img src="./images/youtube (1).png" alt="">
+  </a>
+  <!-- WhatsApp -->
+  <a href="https://wa.me/919999999999" target="_blank" title="WhatsApp">
+    <img src="./images/watsapp.png" alt="">
+  </a>
+ 
+</div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="footer-bottom">
+    <div>🇮🇳 India | English (UK) | ₹ (INR)</div>
+    <div>
+      © 2026 Etsy, Inc. ·
+      <a href="#">Terms of Use</a> ·
+      <a href="#">Privacy</a> ·
+      <a href="#">Interest-based ads</a> ·
+      <a href="#">Local Shops</a> ·
+      <a href="#">Regions</a>
+    </div>
+  </div>
+
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

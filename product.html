@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Etsy Products</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <div class="logo">Etsy</div>
+
+  <div class="nav-right">
+    <button class="icon-btn">🌙</button>
+    <button class="icon-btn">🔔</button>
+    <button class="icon-btn">👤</button>
+    <button class="icon-btn cart">🛒 0</button>
+  </div>
+</div>
+
+<h1 class="page-title">Best-selling gifts they’ll love</h1>
+
+<div class="products-grid" id="productsGrid"></div>
+
+<script src="script.js"></script>
+<script>
+  // ❌ No add to cart here
+  renderProducts(products, "productsGrid", false);
+</script>
+
+<script src="script.js"></script>
+
+
+</body>
+</html>
