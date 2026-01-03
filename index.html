@@ -121,6 +121,7 @@
 
   <!-- PRODUCTS GRID -->
   <div class="products-grid" id="productsGrid"></div>
+
 </section>
 
 <!-- OVERLAY -->
@@ -157,12 +158,87 @@
       ₹10000 & above
     </label>
 
-    <label>
-      <input type="radio" name="price" onclick="renderProducts(products,'productsGrid')">
-      All Products
-    </label>
+<label>
+  <input type="radio" name="price"
+    onclick="renderProducts(indexProducts,'productsGrid', false)">
+  All Products
+</label>
+
+
   </div>
 </div>
+
+
+<!-- images -->
+ <section class="shops-section">
+  <h2 class="shops-title">Shops worth favouriting</h2>
+
+  <div class="shops-grid">
+
+    <!-- SHOP CARD 1 -->
+    <div class="shop-card">
+      <div class="shop-images">
+        <img src="./images/picsrr1.avif">
+        <img src="./images/picsrr1.avif">
+        <img src="./images/picsrr1.avif">
+        <img src="./images/picsrr1.avif">
+        
+      </div>
+
+      <div class="shop-info">
+        <div class="shop-name">
+          RAWSONSTUDIO
+          <span class="heart">♡</span>
+        </div>
+        <div class="shop-rating">
+          ★★★★★ <span>(10,908)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHOP CARD 2 -->
+    <div class="shop-card">
+      <div class="shop-images">
+        <img src="./images/picsrr2.avif">
+        <img src="./images/picsrr2.avif">
+        <img src="./images/picsrr2.avif">
+        <img src="./images/picsrr2.avif">
+      </div>
+
+      <div class="shop-info">
+        <div class="shop-name">
+          FoundYesterdayThrift
+          <span class="heart">♡</span>
+        </div>
+        <div class="shop-rating">
+          ★★★★★ <span>(247)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHOP CARD 3 -->
+    <div class="shop-card">
+      <div class="shop-images">
+        <img src="./images/picsrr5.avif">
+        <img src="./images/picsrr5.avif">
+        <img src="./images/picsrr5.avif">
+        <img src="./images/picsrr5.avif">
+      </div>
+
+      <div class="shop-info">
+        <div class="shop-name">
+          rcossfinds
+          <span class="heart">♡</span>
+        </div>
+        <div class="shop-rating">
+          ★★★★★ <span>(169)</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
 
 
@@ -172,14 +248,54 @@
   <h1 class="section-title">Best-selling gifts they’ll love</h1>
 
   <div class="filter-bar">
-    <button class="filter-btn"
-      onclick="openFilter('filterPanel2','overlay2')">
-      ⚙️ Filters
-    </button>
+    <button class="filter-btn" onclick="openFilter2()">⚙️ Filters</button>
   </div>
 
   <div class="products-grid" id="productsGrid2"></div>
 </section>
+
+<!-- second filter -->
+ <!-- SECOND FILTER OVERLAY -->
+<div class="filter-overlay" id="filterOverlay2" onclick="closeFilter2()"></div>
+
+<!-- SECOND FILTER PANEL -->
+<div class="filter-panel" id="filterPanel2">
+  <div class="filter-header">
+    <h3>Filters</h3>
+    <button onclick="closeFilter2()">✕</button>
+  </div>
+
+  <div class="filter-section">
+    <h4>Price</h4>
+
+    <label>
+      <input type="radio" name="price2" onclick="filterPrice2(0,1000)">
+      Under ₹1000
+    </label>
+
+    <label>
+      <input type="radio" name="price2" onclick="filterPrice2(1000,3000)">
+      ₹1000 – ₹3000
+    </label>
+
+    <label>
+      <input type="radio" name="price2" onclick="filterPrice2(3000,8000)">
+      ₹3000 – ₹8000
+    </label>
+
+    <label>
+      <input type="radio" name="price2" onclick="filterPrice2(10000,Infinity)">
+      ₹10000 & above
+    </label>
+
+    <label>
+      <input type="radio" name="price2"
+        onclick="renderProducts(bestSellingProducts,'productsGrid2')">
+      All products
+    </label>
+  </div>
+</div>
+
 
 
 <!-- ===== ETSY FOOTER ===== -->
@@ -306,10 +422,19 @@
 
 
 
-
-
-
 <script src="script.js"></script>
+<script>
+  renderProducts(indexProducts, "productsGrid", false);
+  // Second section (DIFFERENT PRODUCTS)
+renderProducts(bestSellingProducts, "productsGrid2");
+  renderProducts(productPageProducts, "productGrid", true);
+ 
+
+
+</script>
+
+
+
 
 </body>
 </html>

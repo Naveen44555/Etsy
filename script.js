@@ -36,17 +36,18 @@ document.addEventListener("click", () => {
 
 
 // fetch
- fetch("navbar.html")
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById("navbar").innerHTML = data;
-    });
-
+fetch("navbar.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("navbar").innerHTML = data;
+    updateCartCount(); // ✅ VERY IMPORTANT
+  });
 
 
 // PRODUCTS DATA (ADD 11, 20, ANY NUMBER HERE)
 // 1️⃣ PRODUCTS DATA (TOP)
-const products = [
+// first products in index
+const indexProducts = [
   {
     id:1,
     title: "Handmade Gift",
@@ -82,7 +83,7 @@ const products = [
   {
      id:5,
     title: "Luxury Gift Box",
-    price: 12000,
+    price: 9000,
     oldPrice: 15000,
     rating: 5.0,
     img: "./images/wp6.webp"
@@ -90,7 +91,7 @@ const products = [
   {
      id:6,
     title: "Luxury Gift Box",
-    price: 12000,
+    price: 66000,
     oldPrice: 15000,
     rating: 5.0,
     img: "./images/wp6.webp"
@@ -98,7 +99,7 @@ const products = [
   {
      id:7,
     title: "Luxury Gift Box",
-    price: 12000,
+    price: 4000,
     oldPrice: 15000,
     rating: 5.0,
     img: "./images/wp6.webp"
@@ -106,7 +107,7 @@ const products = [
   {
      id:8,
     title: "Luxury Gift Box",
-    price: 12000,
+    price: 8000,
     oldPrice: 15000,
     rating: 5.0,
     img: "./images/wp6.webp"
@@ -114,7 +115,7 @@ const products = [
   {
      id:9,
     title: "Luxury Gift Box",
-    price: 12000,
+    price: 5000,
     oldPrice: 15000,
     rating: 5.0,
     img: "./images/wp6.webp"
@@ -130,7 +131,7 @@ const products = [
   {
      id:11,
     title: "Luxury Gift Box",
-    price: 12000,
+    price: 1000,
     oldPrice: 15000,
     rating: 5.0,
     img: "./images/wp6.webp"
@@ -138,7 +139,7 @@ const products = [
   {
      id:12,
     title: "Luxury Gift Box",
-    price: 12000,
+    price: 2000,
     oldPrice: 15000,
     rating: 5.0,
     img: "./images/wp6.webp"
@@ -149,24 +150,50 @@ const products = [
 const grid = document.getElementById("productsGrid");
 
 // 3️⃣ RENDER FUNCTION
-function renderProducts(list, gridId) {
+function renderProducts(list, gridId, showCartBtn = false) {
   const grid = document.getElementById(gridId);
+  if (!grid) return;
 
   grid.innerHTML = list.map(p => `
-    <a href="product.html?id=${p.id ?? ""}" class="product-link">
-      <div class="product-card">
+    <div class="product-card">
+
+      <!-- IMAGE CLICK → PRODUCT PAGE -->
+      <a href="product.html?id=${p.id}" class="product-link">
         <img src="${p.img}">
-        <div class="product-title">${p.title}</div>
-        <div class="rating">${p.rating} ★</div>
-        <div>
-          <span class="price">₹${p.price}</span>
-          <span class="old-price">₹${p.oldPrice}</span>
-        </div>
-        <div class="more-like">More like this →</div>
+      </a>
+
+      <!-- TITLE -->
+      <div class="product-title">${p.title}</div>
+
+      <!-- RATING -->
+      <div class="rating">${p.rating} ★</div>
+
+      <!-- PRICE -->
+      <div class="price-row">
+        <span class="price">₹${p.price} </span>
+        <span class="old-price">₹${p.oldPrice}</span>
       </div>
-    </a>
+
+      <!-- 👇 SHOW ONLY ON INDEX PAGE -->
+      ${
+        !showCartBtn
+          ? `<div class="more-like">More like this →</div>`
+          : ""
+      }
+
+      <!-- 👇 SHOW ONLY ON PRODUCT PAGE -->
+      ${
+        showCartBtn
+          ? `<button class="add-cart" onclick="addToCart(${p.id})">
+                Add to cart
+             </button>`
+          : ""
+      }
+
+    </div>
   `).join("");
 }
+
 
 
 
@@ -177,10 +204,10 @@ function renderProducts(list, gridId) {
 
 // 5️⃣ PRICE FILTER FUNCTION  ✅ WRITE HERE
 function filterPrice(min, max) {
-  const filtered = products.filter(
+  const filtered = indexProducts.filter(
     p => p.price >= min && p.price <= max
   );
-  renderProducts(filtered, "productsGrid");
+  renderProducts(filtered, "productsGrid", false);
   closeFilter();
 }
 
@@ -199,139 +226,518 @@ function closeFilter() {
 
 
 // last
-const products2 = [
+const productPageProducts = [
   {
     id: 101,
-    title: "Leather Camera Strap",
-    price: 2054,
-    oldPrice: 4109,
-    rating: 4.8,
-    img: "./images/wp2.webp"
+    title: "Hummingbird Glass Art",
+    price: 3755,
+    oldPrice: 7510,
+    rating: 5.0,
+    img: "./images/wp6.webp"
   },
   {
     id: 102,
-    title: "Engraved Espresso Cup",
-    price: 1743,
-    oldPrice: 2325,
-    rating: 4.5,
-    img: "./images/wp4.avif"
+    title: "Personalized Jewelry Box",
+    price: 1042,
+    oldPrice: 1488,
+    rating: 4.9,
+    img: "./images/wp5.avif"
+  },
+  {
+    id: 103,
+    title: "Wood Docking Station",
+    price: 2410,
+    oldPrice: 4382,
+    rating: 4.6,
+   img: "./images/wp5.avif"
   },
   {
     id: 101,
-    title: "Leather Camera Strap",
-    price: 2054,
-    oldPrice: 4109,
-    rating: 4.8,
-    img: "./images/wp2.webp"
+    title: "Hummingbird Glass Art",
+    price: 3755,
+    oldPrice: 7510,
+    rating: 5.0,
+    img: "./images/wp6.webp"
   },
   {
     id: 102,
-    title: "Engraved Espresso Cup",
-    price: 1743,
-    oldPrice: 2325,
-    rating: 4.5,
-    img: "./images/wp4.avif"
+    title: "Personalized Jewelry Box",
+    price: 1042,
+    oldPrice: 1488,
+    rating: 4.9,
+    img: "./images/wp5.avif"
+  },
+  {
+    id: 103,
+    title: "Wood Docking Station",
+    price: 2410,
+    oldPrice: 4382,
+    rating: 4.6,
+   img: "./images/wp5.avif"
   },
   {
     id: 101,
-    title: "Leather Camera Strap",
-    price: 2054,
-    oldPrice: 4109,
-    rating: 4.8,
-    img: "./images/wp2.webp"
+    title: "Hummingbird Glass Art",
+    price: 3755,
+    oldPrice: 7510,
+    rating: 5.0,
+    img: "./images/wp6.webp"
   },
   {
     id: 102,
-    title: "Engraved Espresso Cup",
-    price: 1743,
-    oldPrice: 2325,
-    rating: 4.5,
-    img: "./images/wp4.avif"
+    title: "Personalized Jewelry Box",
+    price: 1042,
+    oldPrice: 1488,
+    rating: 4.9,
+    img: "./images/wp5.avif"
+  },
+  {
+    id: 103,
+    title: "Wood Docking Station",
+    price: 2410,
+    oldPrice: 4382,
+    rating: 4.6,
+   img: "./images/wp5.avif"
   },
   {
     id: 101,
-    title: "Leather Camera Strap",
-    price: 2054,
-    oldPrice: 4109,
-    rating: 4.8,
-    img: "./images/wp2.webp"
+    title: "Hummingbird Glass Art",
+    price: 3755,
+    oldPrice: 7510,
+    rating: 5.0,
+    img: "./images/wp6.webp"
   },
   {
     id: 102,
-    title: "Engraved Espresso Cup",
-    price: 1743,
-    oldPrice: 2325,
-    rating: 4.5,
-    img: "./images/wp4.avif"
+    title: "Personalized Jewelry Box",
+    price: 1042,
+    oldPrice: 1488,
+    rating: 4.9,
+    img: "./images/wp5.avif"
+  },
+  {
+    id: 103,
+    title: "Wood Docking Station",
+    price: 2410,
+    oldPrice: 4382,
+    rating: 4.6,
+   img: "./images/wp5.avif"
   },
   {
     id: 101,
-    title: "Leather Camera Strap",
-    price: 2054,
-    oldPrice: 4109,
-    rating: 4.8,
-    img: "./images/wp2.webp"
+    title: "Hummingbird Glass Art",
+    price: 3755,
+    oldPrice: 7510,
+    rating: 5.0,
+    img: "./images/wp6.webp"
   },
   {
     id: 102,
-    title: "Engraved Espresso Cup",
-    price: 1743,
-    oldPrice: 2325,
-    rating: 4.5,
-    img: "./images/wp4.avif"
+    title: "Personalized Jewelry Box",
+    price: 1042,
+    oldPrice: 1488,
+    rating: 4.9,
+    img: "./images/wp5.avif"
+  },
+  {
+    id: 103,
+    title: "Wood Docking Station",
+    price: 2410,
+    oldPrice: 4382,
+    rating: 4.6,
+   img: "./images/wp5.avif"
   },
   {
     id: 101,
-    title: "Leather Camera Strap",
-    price: 2054,
-    oldPrice: 4109,
-    rating: 4.8,
-    img: "./images/wp2.webp"
+    title: "Hummingbird Glass Art",
+    price: 3755,
+    oldPrice: 7510,
+    rating: 5.0,
+    img: "./images/wp6.webp"
   },
   {
     id: 102,
-    title: "Engraved Espresso Cup",
-    price: 1743,
-    oldPrice: 2325,
-    rating: 4.5,
-    img: "./images/wp4.avif"
+    title: "Personalized Jewelry Box",
+    price: 1042,
+    oldPrice: 1488,
+    rating: 4.9,
+    img: "./images/wp5.avif"
+  },
+  {
+    id: 103,
+    title: "Wood Docking Station",
+    price: 2410,
+    oldPrice: 4382,
+    rating: 4.6,
+   img: "./images/wp5.avif"
+  },
+  {
+    id: 102,
+    title: "Personalized Jewelry Box",
+    price: 1042,
+    oldPrice: 1488,
+    rating: 4.9,
+    img: "./images/wp5.avif"
+  },
+  {
+    id: 103,
+    title: "Wood Docking Station",
+    price: 2410,
+    oldPrice: 4382,
+    rating: 4.6,
+   img: "./images/wp5.avif"
+  },
+  {
+    id: 102,
+    title: "Personalized Jewelry Box",
+    price: 1042,
+    oldPrice: 1488,
+    rating: 4.9,
+    img: "./images/wp5.avif"
+  },
+  {
+    id: 103,
+    title: "Wood Docking Station",
+    price: 2410,
+    oldPrice: 4382,
+    rating: 4.6,
+   img: "./images/wp5.avif"
   },
   {
     id: 101,
-    title: "Leather Camera Strap",
-    price: 2054,
-    oldPrice: 4109,
-    rating: 4.8,
-    img: "./images/wp2.webp"
+    title: "Hummingbird Glass Art",
+    price: 3755,
+    oldPrice: 7510,
+    rating: 5.0,
+    img: "./images/wp6.webp"
   },
   {
     id: 102,
-    title: "Engraved Espresso Cup",
-    price: 1743,
-    oldPrice: 2325,
-    rating: 4.5,
-    img: "./images/wp4.avif"
+    title: "Personalized Jewelry Box",
+    price: 1042,
+    oldPrice: 1488,
+    rating: 4.9,
+    img: "./images/wp5.avif"
+  },
+  {
+    id: 103,
+    title: "Wood Docking Station",
+    price: 2410,
+    oldPrice: 4382,
+    rating: 4.6,
+   img: "./images/wp5.avif"
+  },
+  {
+    id: 102,
+    title: "Personalized Jewelry Box",
+    price: 1042,
+    oldPrice: 1488,
+    rating: 4.9,
+    img: "./images/wp5.avif"
+  },
+  {
+    id: 103,
+    title: "Wood Docking Station",
+    price: 2410,
+    oldPrice: 4382,
+    rating: 4.6,
+   img: "./images/wp5.avif"
+  },
+  {
+    id: 102,
+    title: "Personalized Jewelry Box",
+    price: 1042,
+    oldPrice: 1488,
+    rating: 4.9,
+    img: "./images/wp5.avif"
+  },
+  {
+    id: 103,
+    title: "Wood Docking Station",
+    price: 2410,
+    oldPrice: 4382,
+    rating: 4.6,
+   img: "./images/wp5.avif"
   },
   {
     id: 101,
-    title: "Leather Camera Strap",
-    price: 2054,
-    oldPrice: 4109,
-    rating: 4.8,
-    img: "./images/wp2.webp"
+    title: "Hummingbird Glass Art",
+    price: 3755,
+    oldPrice: 7510,
+    rating: 5.0,
+    img: "./images/wp6.webp"
   },
   {
     id: 102,
-    title: "Engraved Espresso Cup",
-    price: 1743,
-    oldPrice: 2325,
-    rating: 4.5,
-    img: "./images/wp4.avif"
+    title: "Personalized Jewelry Box",
+    price: 1042,
+    oldPrice: 1488,
+    rating: 4.9,
+    img: "./images/wp5.avif"
+  },
+  {
+    id: 103,
+    title: "Wood Docking Station",
+    price: 2410,
+    oldPrice: 4382,
+    rating: 4.6,
+   img: "./images/wp5.avif"
+  },
+  {
+    id: 102,
+    title: "Personalized Jewelry Box",
+    price: 1042,
+    oldPrice: 1488,
+    rating: 4.9,
+    img: "./images/wp5.avif"
+  },
+  {
+    id: 103,
+    title: "Wood Docking Station",
+    price: 2410,
+    oldPrice: 4382,
+    rating: 4.6,
+   img: "./images/wp5.avif"
+  },
+  {
+    id: 102,
+    title: "Personalized Jewelry Box",
+    price: 1042,
+    oldPrice: 1488,
+    rating: 4.9,
+    img: "./images/wp5.avif"
+  },
+  {
+    id: 103,
+    title: "Wood Docking Station",
+    price: 2410,
+    oldPrice: 4382,
+    rating: 4.6,
+   img: "./images/wp5.avif"
   },
 ];
 
-// RENDER ON LOAD
-renderProducts(products, "productsGrid");
-renderProducts(products2, "productsGrid2");
+
+// best selling products 
+// second products in index page
+const bestSellingProducts = [
+  {
+    id: 101,
+    title: "Hummingbird Glass Art",
+    price: 3755,
+    oldPrice: 7510,
+    rating: 5.0,
+    img: "./images/wp5.avif"
+  },
+  {
+    id: 102,
+    title: "Personalized Jewelry Box",
+    price: 1042,
+    oldPrice: 1488,
+    rating: 4.9,
+    img: "./images/wp4.avif"
+  },
+  {
+    id: 103,
+    title: "Wood Docking Station",
+    price: 2410,
+    oldPrice: 4382,
+    rating: 4.6,
+    img: "./images/wp2.webp"
+  },
+  {
+    id: 104,
+    title: "Engraved Espresso Cup",
+    price: 1743,
+    oldPrice: 2325,
+    rating: 4.5,
+   img: "./images/wp5.avif"
+  },
+  {
+    id: 105,
+    title: "Wood Docking Station",
+    price: 2410,
+    oldPrice: 9382,
+    rating: 4.6,
+    img: "./images/wp2.webp"
+  },
+  {
+    id: 106,
+    title: "Engraved Espresso Cup",
+    price: 1743,
+    oldPrice: 2325,
+    rating: 4.5,
+   img: "./images/wp5.avif"
+  },
+  {
+    id: 107,
+    title: "Wood Docking Station",
+    price: 2410,
+    oldPrice: 6382,
+    rating: 4.6,
+    img: "./images/wp2.webp"
+  },
+  {
+    id: 108,
+    title: "Engraved Espresso Cup",
+    price: 1743,
+    oldPrice: 4425,
+    rating: 4.5,
+   img: "./images/wp5.avif"
+  },
+  {
+    id: 109,
+    title: "Wood Docking Station",
+    price: 2410,
+    oldPrice: 4382,
+    rating: 4.6,
+    img: "./images/wp2.webp"
+  },
+  {
+    id: 110,
+    title: "Engraved Espresso Cup",
+    price: 1743,
+    oldPrice: 225,
+    rating: 4.5,
+   img: "./images/wp5.avif"
+  },
+  {
+    id: 112,
+    title: "Wood Docking Station",
+    price: 2410,
+    oldPrice: 4382,
+    rating: 4.6,
+    img: "./images/wp2.webp"
+  },
+  {
+    id: 113,
+    title: "Engraved Espresso Cup",
+    price: 543,
+    oldPrice: 2325,
+    rating: 4.5,
+   img: "./images/wp5.avif"
+  },
+];
+
+// second filter
+function openFilter2() {
+  document.getElementById("filterPanel2").classList.add("open");
+  document.getElementById("filterOverlay2").classList.add("show");
+}
+
+function closeFilter2() {
+  document.getElementById("filterPanel2").classList.remove("open");
+  document.getElementById("filterOverlay2").classList.remove("show");
+}
+
+function filterPrice2(min, max) {
+  const filtered = bestSellingProducts.filter(
+    p => p.price >= min && p.price <= max
+  );
+
+  renderProducts(filtered, "productsGrid2");
+  closeFilter2();
+}
+
+// -----------
 
 
+
+
+// // RENDER ON LOAD
+// renderProducts(products, "productsGrid");
+// renderProducts(products2, "productsGrid2");
+
+
+// cart 
+function addToCart(id) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  const product =
+    productPageProducts.find(p => p.id === id) ||
+    indexProducts.find(p => p.id === id);
+
+  if (!product) return;
+
+  cart.push(product);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount();
+}
+
+
+// count
+function updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const el = document.getElementById("cartCount");
+  if (el) el.textContent = cart.length;
+}
+
+
+// cart items----------
+function loadCart() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const container = document.getElementById("cartItems");
+  if (!container) return;
+
+  if (cart.length === 0) {
+    container.innerHTML = "<p>Your basket is empty.</p>";
+    return;
+  }
+
+  container.innerHTML = cart.map((item, index) => `
+    <div class="etsy-cart-card">
+
+      <div class="seller-row">
+        <strong>WildWatches</strong>
+        <span class="rating">⭐ ${item.rating} (3.3k)</span>
+        <span class="dots">•••</span>
+      </div>
+
+      <div class="cart-main">
+        <img src="${item.img}" class="cart-img">
+
+        <div class="cart-details">
+          <h3>${item.title}</h3>
+
+          <span class="option">Custom Engraving: No Engraving</span>
+
+          <p class="sale">Sale ends 04 January</p>
+
+          <div class="cart-actions">
+            <select>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+            </select>
+
+            <span>Edit</span>
+            <span>Save for later</span>
+            <span onclick="removeFromCart(${index})" class="remove">Remove</span>
+          </div>
+        </div>
+
+        <div class="cart-price">
+          <span class="discount">25% off</span>
+          <h2>₹ ${item.price}</h2>
+          <del>₹ ${item.oldPrice}</del>
+        </div>
+      </div>
+
+      <div class="delivery">
+        Delivery: <strong>₹ 890</strong> (Get it by 12 Jan – 09 Feb)
+      </div>
+
+    </div>
+  `).join("");
+}
+
+
+function removeFromCart(index) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.splice(index, 1);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  loadCart();
+  updateCartCount();
+}
+
+// ----------

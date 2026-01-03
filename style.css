@@ -173,6 +173,7 @@ body.dark .card {
   width: 100%;
   background: #fff;
   padding-bottom: 40px;
+ 
 }
 
 /* HERO */
@@ -181,6 +182,10 @@ body.dark .card {
   color: #fff;
   text-align: center;
   padding: 60px 20px 80px;
+  
+}
+#gift-hero222{
+  background-color: #0f743b;
 }
 
 .gift-hero h1 {
@@ -199,14 +204,17 @@ body.dark .card {
 
 /* GRID */
 .gift-grid {
-  max-width: 1320px;
+  max-width: 1370px;
   margin: -60px auto 0;
-  display: grid;
+  /* display: grid; */
   grid-template-columns: repeat(6, 180px);
   gap: 60px 50px;
   padding: 0 20px;
+  display: flex;
   justify-content: center;
-  
+   align-items: center;
+   flex-wrap: wrap;
+   /* border: 2px red solid; */
 }
 .gift-grid-wrapper {
   display: flex;
@@ -219,6 +227,8 @@ body.dark .card {
 .gift-item {
   text-align: center;
   cursor: pointer;
+  /* border: 2px red solid; */
+
 }
 
 .gift-item img {
@@ -290,6 +300,11 @@ body {
 }
 
 /* CARD */
+.product-card{
+  border: 2px rgba(191, 180, 203, 0.422) solid;
+  border-radius: 15px;
+  padding: 8px;
+}
 
 
 /* When hovering the IMAGE / CARD */
@@ -599,6 +614,231 @@ body {
 
 
 
+/* cart items page */
+.cart-page {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 10px;
+}
+
+.etsy-cart-card {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 25px;
+}
+
+.seller-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.seller-row .rating {
+  color: #555;
+  font-size: 14px;
+}
+
+.seller-row .dots {
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.cart-main {
+  display: flex;
+  gap: 20px;
+}
+
+.cart-img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.cart-details {
+  flex: 1;
+}
+
+.cart-details h3 {
+  margin: 0 0 6px;
+  font-size: 18px;
+}
+
+.option {
+  display: inline-block;
+  background: #f5f5f5;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.sale {
+  color: green;
+  font-size: 14px;
+  margin: 6px 0;
+}
+
+.cart-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.cart-actions select {
+  padding: 4px 6px;
+}
+
+.cart-actions span {
+  cursor: pointer;
+}
+
+.cart-actions .remove {
+  color: red;
+}
+
+.cart-price {
+  text-align: right;
+  min-width: 140px;
+}
+
+.cart-price .discount {
+  background: #c7f0c2;
+  color: #006400;
+  padding: 4px 8px;
+  border-radius: 10px;
+  font-size: 13px;
+}
+
+.cart-price h2 {
+  margin: 8px 0 4px;
+}
+
+.cart-price del {
+  color: #777;
+}
+
+.delivery {
+  border-top: 1px solid #eee;
+  margin-top: 15px;
+  padding-top: 10px;
+  font-size: 14px;
+}
+
+/* cart styling */
+.add-cart {
+  margin-top: 10px;
+  padding: 10px 16px;
+  width: 100%;
+  border-radius: 25px;
+  border: 1.5px solid #222;
+  background: #fff;
+  color: #222;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* hover effect */
+.add-cart:hover {
+  background: #222;
+  color: #fff;
+}
+
+/* click effect */
+.add-cart:active {
+  transform: scale(0.97);
+}
+
+
+/* pics for resolution */
+/* picsrr */
+/* SHOPS WORTH FAVOURITING */
+.shops-section {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 20px;
+}
+
+.shops-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 40px;
+}
+
+.shops-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* SHOP CARD */
+.shop-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+/* IMAGE GRID (2x2) */
+.shop-images {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.shop-images img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* SHOP INFO */
+.shop-info {
+  margin-top: 12px;
+}
+
+.shop-name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.shop-rating {
+  margin-top: 4px;
+  font-size: 13px;
+  color: #000;
+}
+
+.shop-rating span {
+  color: #666;
+  font-weight: normal;
+}
+
+/* HEART */
+.heart {
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* ------video */
+.videos{
+ 
+  border: 2px firebrick solid;
+}
+
+.vfile video{
+  width: 400px;
+  height: 400px;
+}
 
 
 
@@ -613,6 +853,13 @@ body {
 
 
 
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .shops-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 
 
@@ -678,9 +925,6 @@ body {
     font-size: 28px;
   }
 }
-
-
-
 
 
 
