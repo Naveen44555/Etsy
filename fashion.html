@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Fashion | Shop the Latest</title>
+ <link rel="stylesheet" href="homefav111.css">
+</head>
+<body>
+
+    <div id="navbar"></div>
+
+<section class="fashion-c">
+  <h1 class="fashion-title">SHOP THE LATEST</h1>
+
+  <!-- TABS -->
+  <div class="fashion-f1">
+    <div class="fashion-f2" onclick="showCategory('men')">MEN</div>
+    <div class="fashion-f3" onclick="showCategory('women')">WOMEN</div>
+    <div class="fashion-f3" onclick="showCategory('kids')">KIDS</div>
+  </div>
+
+  <!-- GRID -->
+  <div class="fashion-f4" id="fashionid4" ></div>
+</section>
+
+<!--  -->
+
+<div class="myfashionvideos">
+    <video src="./images/fashionvideo1.mp4"  autoplay loop muted playsinline></video>
+</div>
+
+<!--  -->
+<section class="fashion-page">
+  <h1 class="page-title">Fashion</h1>
+
+  <!-- PRODUCTS -->
+  <div class="products-grid" id="fashionGrid"></div>
+</section>
+
+
+
+<!-- ===== ETSY FOOTER ===== -->
+<footer class="etsy-footer">
+
+  <!-- Gift Card Banner -->
+  <div class="giftcard-banner">
+    <div class="giftcard-text">
+      <h2>Shop Etsy gift cards</h2>
+      <p>Get them something one-of-a-kind in minutes, no guesswork needed.</p>
+      <a href="#">Pick a design →</a>
+    </div>
+   <div class="giftcard-img">
+  <img src="./images/navbarimg.webp" alt="Etsy Gift Cards">
+</div>
+
+  </div>
+
+  <!-- Newsletter -->
+  <div class="newsletter">
+    <p>
+      Yes! Send me exclusive offers, unique gift ideas, and personalised tips
+      for shopping and selling on Etsy.
+    </p>
+    <div class="newsletter-box">
+      <input type="email" placeholder="Enter your email">
+      <button>Subscribe</button>
+    </div>
+  </div>
+
+  <!-- Renewable Bar -->
+  <div class="renewable">
+    🌍 Etsy is powered by 100% renewable electricity.
+  </div>
+
+  <!-- Main Footer -->
+  <div class="footer-main">
+
+    <div class="footer-app">
+  <div class="etsy-box">Etsy</div>
+  <button class="app-btn">
+    Download the Etsy App
+  </button>
+</div>
+
+
+    <div class="footer-columns">
+      <div>
+        <h4>Shop</h4>
+        <a href="#">Gift cards</a>
+        <a href="#">Etsy Registry</a>
+        <a href="#">Sitemap</a>
+        <a href="#">Etsy blog</a>
+        <a href="#">Etsy United Kingdom</a>
+        <a href="#">Etsy Germany</a>
+        <a href="#">Etsy Canada</a>
+      </div>
+
+      <div>
+        <h4>Sell</h4>
+        <a href="#">Sell on Etsy</a>
+        <a href="#">Teams</a>
+        <a href="#">Forums</a>
+        <a href="#">Affiliates & Creators</a>
+      </div>
+
+      <div>
+        <h4>About</h4>
+        <a href="#">Etsy, Inc.</a>
+        <a href="#">Policies</a>
+        <a href="#">Investors</a>
+        <a href="#">Careers</a>
+        <a href="#">Press</a>
+        <a href="#">Impact</a>
+        <a href="#">Legal imprint</a>
+      </div>
+
+      <div>
+        <h4>Help</h4>
+        <a href="#">Help Centre</a>
+        <a href="#">Privacy settings</a>
+       <div class="socials">
+  <!-- Instagram -->
+  <a href="https://www.instagram.com/your_username" target="_blank" title="Instagram">
+    <img src="./images/instagram.png" alt="">
+  </a>
+ 
+  <!-- YouTube -->
+  <a href="https://www.youtube.com/" target="_blank" title="YouTube">
+    <img src="./images/youtube (1).png" alt="">
+  </a>
+  <!-- WhatsApp -->
+  <a href="https://wa.me/919999999999" target="_blank" title="WhatsApp">
+    <img src="./images/watsapp.png" alt="">
+  </a>
+ 
+</div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="footer-bottom">
+    <div>🇮🇳 India | English (UK) | ₹ (INR)</div>
+    <div>
+      © 2026 Etsy, Inc. ·
+      <a href="#">Terms of Use</a> ·
+      <a href="#">Privacy</a> ·
+      <a href="#">Interest-based ads</a> ·
+      <a href="#">Local Shops</a> ·
+      <a href="#">Regions</a>
+    </div>
+  </div>
+
+</footer>
+
+
+
+
+
+
+
+
+<script src="script.js"></script>
+<script>
+  renderProducts(fashionProducts, "fashionGrid", true);
+</script>
+
+<!-- popup -->
+<div id="cartToast" class="cart-toast">
+  ✔ Added to cart
+</div>
+
+
+
+</body>
+</html>
