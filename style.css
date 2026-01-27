@@ -1106,23 +1106,21 @@ body {
   .nav-links{
     text-align: center;
   }
-
   .gift-item img {
     width: 128px;
-   
     height: 130px;
   }
   .products-grid{
     padding: 10px;
     display: flex;
     flex-wrap: wrap;
+    gap: 14px;
     /* border: 2px red solid; */
   }
    .product-card{
     width: 46%;
     margin: 0px;
    }
-
   .gift-item span {
     font-size: 14px;
   }
@@ -1143,19 +1141,20 @@ body {
   /* border: 2px red solid; */
 }
 .products-grid{
-  width: 100%;
-  padding: 7px 3px;
+  width: 104%;
+  padding: 5px 2px;
+   /* border: 2px red solid; */
 }
 .product-card{
-  width: 45%;
-  padding: 9px 7px;
+  width: 46%;
+  padding: 7px 9px;
    /* border: 2px red solid; */
 }
 .more-like{
   width: 130px;
 }
-
 }
+
 /* VERY SMALL MOBILES */
 @media (max-width: 320px) {
   .gift-item img {
@@ -1302,9 +1301,7 @@ body {
 }
 
 
-
 @media (max-width: 430px) {
-
   /* HIDE CATEGORIES TEXT COMPLETELY */
   .nav-right {
     display: flex;
@@ -1312,16 +1309,17 @@ body {
     gap: 10px;
     padding: 0;
   }
-  
+  .add-cart{
+    padding: 5px;
+    border-radius: 10px;
+  }
   .navbar{
     display: flex;
     gap: 1px;
   }
- 
    .nav-btn {
     font-size: 19px;
   }
-
   /* SEARCH GOES TO NEXT LINE */
   .search-box {
     width: 100%;
@@ -1384,10 +1382,8 @@ body {
 
   /* tighter icons */
   .nav-right {
-    gap: 4px;
-    
+    gap: 4px; 
   }
-
   .nav-btn,
   .icon-btn {
     font-size: 16px;
@@ -1492,12 +1488,9 @@ body {
 }
 
 @media (max-width: 480px) {
-
- 
   .giftcard-text h2 {
     font-size: 20px;
   }
-
   .giftcard-text p {
     font-size: 14px;
   }
@@ -1505,13 +1498,13 @@ body {
   .footer-bottom {
     font-size: 12px;
     padding: 12px;
-  }
- 
+  } 
 }
 
 @media (max-width: 325px){
   .add-cart{
     font-size: 13px;
+    padding: 3px;
   }
 }
 
