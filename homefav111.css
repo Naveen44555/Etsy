@@ -84,6 +84,7 @@ body {
   background: #fff;
   /* border: 3px rgba(128, 126, 126, 0.076) solid; */
   border-radius: 30px 4px;
+  cursor: pointer;
 }
 
 .fav-card img {
@@ -274,9 +275,9 @@ body {
 
 
 /* grid phtos -----------------------*/
-/* =========================
+/* ======
    IDEAS SECTION
-========================= */
+============= */
 .ideas-section {
   max-width: 1400px;
   margin: 60px auto;
@@ -313,7 +314,6 @@ body {
   gap: 20px;
 }
 /* Make last card fill remaining space */
-
 
 /* =========================
    GRID
@@ -357,9 +357,9 @@ body {
 }
 
 
-/* =========================
+/* ========
    RESPONSIVE
-========================= */
+=========== */
 
 /* LARGE TABLETS */
 @media (max-width: 1100px) {
@@ -406,7 +406,6 @@ body {
   }
 } 
 
-
 /* -------------fashion */
 /* =========================
    GLOBAL
@@ -425,7 +424,7 @@ body {
 
 /* =========================
    PAGE TITLE
-========================= */
+=========== */
 .fashion-c {
   max-width: 1400px;
   margin: 60px auto;
@@ -440,12 +439,9 @@ body {
   margin-bottom: 20px;
 }
 
-/* =========================
-   TABS
-========================= */
-/* =========================
+/* ==========
    CONTAINER
-========================= */
+========= */
 .fashion-c {
   max-width: 1400px;
   margin: 60px auto;
@@ -460,9 +456,9 @@ body {
   margin-bottom: 20px;
 }
 
-/* =========================
+/* =======
    TABS  (FIXED)
-========================= */
+=== */
 .fashion-f1 {
   display: flex;
   justify-content: center;
@@ -484,34 +480,29 @@ body {
   border-color: #000;
 }
 
-/* =========================
+/* ===
    GRID (FIXED)
-========================= */
+===== */
 .fashion-f4 {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 22px;
 }
 
-/* =========================
-   CARD
-========================= */
-/* =========================
-   CONTAINER
-========================= */
+/* ===== CARD ========= */
+/* ======= CONTAINER  ==== */
 .fashion-c {
   max-width: 1400px;
-  margin: 20px auto;
+  margin: 4px auto;
   padding: 0 24px;
   text-align: center;
   font-family: Inter, Arial, sans-serif;
-
 }
 
 .fashion-title {
   font-size: 36px;
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 6px;  
 }
 
 /* =========================
@@ -521,7 +512,8 @@ body {
   display: flex;
   justify-content: center;
   gap: 30px;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
+   cursor: pointer;
 }
 
 .fashion-f2,
@@ -529,13 +521,18 @@ body {
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  padding-bottom: 6px;
+  padding-bottom: 5px;
   border-bottom: 2px solid transparent;
 }
+.fashion-f3:hover{
+  color: red;
+}
+
 
 .fashion-f2.active,
 .fashion-f3.active {
-  border-color: #000;
+   border-bottom-color: #000;
+  color: #000;
 }
 
 /* =========================
@@ -596,7 +593,6 @@ body {
   display: none;
 }
 
-
 /* fashion wear */
 /* video */
 .myfashionvideos{
@@ -607,38 +603,8 @@ body {
 }
 
 .myfashionvideos video{
- 
-  width: 80%;
+   width: 80%;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* =========================
    RESPONSIVE
@@ -659,3 +625,61 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+
+/* =========================
+   MOBILE FIX – PRODUCT CARDS
+========================= */
+@media (max-width: 480px) {
+
+  /* slider cards (Add to cart ones) */
+  .product-slider {
+    gap: 12px;
+  }
+
+  .product-card {
+    min-width: 46%;
+    height: auto;
+  }
+
+  .product-card img {
+    height: 160px;
+  }
+
+  /* fashion / grid cards */
+  .fashion-f4 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .fashion-card img {
+    height: 200px;
+  }
+}
+
+/* =========================
+   325px FIX – FORCE 2 CARDS
+========================= */
+@media (max-width: 325px) {
+  .product-slider {
+   gap: 4px;            /* reduce space between cards */
+    padding: 0 2px;
+  }
+
+  .product-card {
+    min-width: calc(47% - 4px);  /* 🔑 KEY FIX */
+    flex: 0 0 calc(47% - 4px);
+    height: auto;
+    padding: 4px;
+  }
+
+  .product-card img {
+    height: 140px;
+  }
+
+  .product-card h3 {
+    font-size: 14px;
+  }
+ 
+}
+

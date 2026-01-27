@@ -10,6 +10,28 @@ function toggleDark() {
     document.body.classList.contains("dark") ? "dark" : "light"
   );
 }
+function goToShops() {
+  const targetPage = "index.html"; // page where section exists
+
+  if (window.location.pathname.includes("index.html")) {
+    // already on page → just scroll
+    document.getElementById("shops").scrollIntoView({
+      behavior: "smooth"
+    });
+  } else {
+    // different page → go to page + section
+    window.location.href = targetPage + "#shops";
+  }
+}
+window.addEventListener("load", () => {
+  if (window.location.hash) {
+    const el = document.querySelector(window.location.hash);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+});
+
 
 /* KEEP DARK MODE AFTER PAGE CHANGE */
 window.onload = () => {
@@ -17,7 +39,6 @@ window.onload = () => {
     document.body.classList.add("dark");
   }
 };
-
 
 // categeries
 function toggleCategories(event) {
@@ -97,7 +118,7 @@ const indexProducts = [
   },
   {
      id:7,
-    title: "Play Dough Christmas Tree",
+    title: "Play Dough Christmas ",
     price: 2000,
     oldPrice: 3000,
     rating: 5.0,
@@ -613,7 +634,7 @@ const picsPageProducts = [
   {
     id: 201,
     img: "./images1/pics11/pics21.avif",
-    title: "Rose Teddy Combo",
+    title: "Home Doecors",
     price: 1299,
      oldPrice: 2499,
     rating: 4.7
@@ -621,7 +642,7 @@ const picsPageProducts = [
   {
     id: 202,
      img: "./images1/pics11/pics25.webp",
-     title: "Anniversary Scrapbook",
+     title: "Kid dress",
     price: 1799,
      oldPrice: 2499,
     rating: 4.9
@@ -629,7 +650,7 @@ const picsPageProducts = [
   {
     id: 203,
      img: "./images1/pics11/pics24.webp",
-    title: "Rose Teddy Combo",
+    title: "Ballon Decor",
     price: 1299,
      oldPrice: 2499,
     rating: 4.7
@@ -637,7 +658,7 @@ const picsPageProducts = [
   {
     id: 204,
     img: "./images1/pics11/pics23.avif",
-     title: "Anniversary Scrapbook",
+     title: "Table Decor",
     price: 1799,
      oldPrice: 2499,
     rating: 4.9
@@ -645,7 +666,7 @@ const picsPageProducts = [
   {
     id: 205,
     img: "./images1/pics11/pics22.webp",
-    title: "Rose Teddy Combo",
+    title: "Book Tables",
     price: 1299,
      oldPrice: 2499,
     rating: 4.7
@@ -653,7 +674,7 @@ const picsPageProducts = [
   {
     id: 206,
    img: "./images1/pics11/pics27.webp",
-     title: "Anniversary Scrapbook",
+     title: "Anniversary Rings ",
     price: 1799,
      oldPrice: 2499,
     rating: 4.9
@@ -661,7 +682,7 @@ const picsPageProducts = [
   {
     id: 207,
     img: "./images1/pics11/pics28.webp",
-    title: "Rose Teddy Combo",
+    title: "Enagement Rings",
     price: 1299,
      oldPrice: 2499,
     rating: 4.7
@@ -669,7 +690,7 @@ const picsPageProducts = [
   {
     id: 208,
      img: "./images1/pics11/pics29.webp",
-     title: "Anniversary Scrapbook",
+     title: "Ring New Model",
     price: 1799,
      oldPrice: 2499,
     rating: 4.9
@@ -677,7 +698,7 @@ const picsPageProducts = [
   {
     id: 201,
      img: "./images1/pics11/pics30.webp",
-    title: "Rose Teddy Combo",
+    title: "Hand Love Arts",
     price: 1299,
      oldPrice: 2499,
     rating: 4.7
@@ -685,7 +706,7 @@ const picsPageProducts = [
   {
     id: 202,
     img: "./images1/pics11/pics31.webp",
-     title: "Anniversary Scrapbook",
+     title: "Hand Art Prints",
     price: 1799,
      oldPrice: 2499,
     rating: 4.9
@@ -693,7 +714,7 @@ const picsPageProducts = [
   {
     id: 201,
      img: "./images1/pics11/pics33.webp",
-    title: "Rose Teddy Combo",
+    title: "Hand Prefers",
     price: 1299,
      oldPrice: 2499,
     rating: 4.7
@@ -701,7 +722,7 @@ const picsPageProducts = [
   {
     id: 202,
     img: "./images1/pics11/pics34.webp",
-     title: "Anniversary Scrapbook",
+     title: "Hand Toys",
     price: 1799,
      oldPrice: 2499,
     rating: 4.9
@@ -709,7 +730,7 @@ const picsPageProducts = [
   {
     id: 201,
     img: "./images1/pics11/pics35.webp",
-    title: "Rose Teddy Combo",
+    title: "Hanuman Gift",
     price: 1299,
      oldPrice: 2499,
     rating: 4.7
@@ -717,7 +738,7 @@ const picsPageProducts = [
   {
     id: 202,
     img: "./images1/pics11/pics36.webp",
-     title: "Anniversary Scrapbook",
+     title: "Little Hearts",
     price: 1799,
      oldPrice: 2499,
     rating: 4.9
@@ -725,7 +746,7 @@ const picsPageProducts = [
   {
     id: 202,
     img: "./images1/pics11/pics21.avif",
-   title: "Custom Mug",
+   title: "Decors Items",
     price: 499,
      oldPrice: 2499,
     rating: 4.5
@@ -733,7 +754,7 @@ const picsPageProducts = [
   {
     id: 202,
      img: "./images1/pics11/pics3.avif",
-    title: "Anniversary Scrapbook",
+    title: "Decor Bottles",
     price: 1799,
      oldPrice: 2499,
     rating: 4.9
@@ -741,7 +762,7 @@ const picsPageProducts = [
   {
     id: 202,
       img: "./images1/pics11/pics9.avif",
-     title: "Custom Mug",
+     title: "Art Printed Gifts",
     price: 499,
      oldPrice: 2499,
     rating: 4.5
@@ -749,7 +770,7 @@ const picsPageProducts = [
   {
    id: 202,
      img: "./images1/pics11/pics20.avif",
-    title: "Rose Teddy Combo",
+    title: "Home Needs",
     price: 1299,
      oldPrice: 2499,
     rating: 4.7
@@ -757,7 +778,7 @@ const picsPageProducts = [
   {
     id: 202,
       img: "./images1/pics11/pics5.webp",
-    title:"Custom Mug",
+    title:"Home Decors",
     price: 499,
      oldPrice: 2499,
     rating: 4.5
@@ -765,7 +786,7 @@ const picsPageProducts = [
   {
     id: 202,
      img: "./images1/pics11/pics19.avif",
-    title: "Rose Teddy Combo",
+    title: "Door curtains",
     price: 1299,
      oldPrice: 2499,
     rating: 4.7
@@ -789,7 +810,7 @@ document.addEventListener("DOMContentLoaded", () => {
 const homefavProducts = [
   {
     id: 301,
-    title: "Minimal Wall Art",
+    title: "Elegant Chairs",
     price: 1899,
     oldPrice: 2499,
     rating: 4.8,
@@ -797,7 +818,7 @@ const homefavProducts = [
   },
   {
     id: 302,
-    title: "Boho Cushion Cover",
+    title: "Rocking Chairs",
     price: 1299,
     oldPrice: 1799,
     rating: 4.6,
@@ -805,7 +826,7 @@ const homefavProducts = [
   },
   {
     id: 303,
-    title: "Handmade Ceramic Vase",
+    title: "Dining chairs",
     price: 2999,
     oldPrice: 3999,
     rating: 4.9,
@@ -813,7 +834,7 @@ const homefavProducts = [
   },
   {
     id: 304,
-    title: "Minimal Wall Art",
+    title: "Cafe Chairs",
     price: 1899,
     oldPrice: 2499,
     rating: 4.8,
@@ -821,7 +842,7 @@ const homefavProducts = [
   },
   {
     id: 305,
-    title: "Boho Cushion Cover",
+    title: "Elevate Evaey Meal",
     price: 1299,
     oldPrice: 1799,
     rating: 4.6,
@@ -829,7 +850,7 @@ const homefavProducts = [
   },
   {
     id: 306,
-    title: "Handmade Ceramic Vase",
+    title: "Home Decor",
     price: 2999,
     oldPrice: 3999,
     rating: 4.9,
@@ -837,7 +858,7 @@ const homefavProducts = [
   },
   {
     id: 307,
-    title: "Minimal Wall Art",
+    title: "Family seating",
     price: 1899,
     oldPrice: 2499,
     rating: 4.8,
@@ -845,7 +866,7 @@ const homefavProducts = [
   },
   {
     id: 308,
-    title: "Boho Cushion Cover",
+    title: "Style stool",
     price: 1299,
     oldPrice: 1799,
     rating: 4.6,
@@ -853,7 +874,7 @@ const homefavProducts = [
   },
   {
     id: 309,
-    title: "Handmade Ceramic Vase",
+    title: "Handmade Bed Decor",
     price: 2999,
     oldPrice: 3999,
     rating: 4.9,
@@ -861,7 +882,7 @@ const homefavProducts = [
   },
   {
     id: 310,
-    title: "Minimal Wall Art",
+    title: "Elegant Cozy inviting",
     price: 1899,
     oldPrice: 2499,
     rating: 4.8,
@@ -869,7 +890,7 @@ const homefavProducts = [
   },
   {
     id: 311,
-    title: "Boho Cushion Cover",
+    title: "Element Media & storage",
     price: 1299,
     oldPrice: 1799,
     rating: 4.6,
@@ -877,7 +898,7 @@ const homefavProducts = [
   },
   {
     id: 312,
-    title: "Handmade Ceramic Vase",
+    title: "Modern Chairs",
     price: 2999,
     oldPrice: 3999,
     rating: 4.9,
@@ -885,7 +906,7 @@ const homefavProducts = [
   },
   {
     id: 313,
-    title: "Minimal Wall Art",
+    title: "Bedcult Furniture",
     price: 1899,
     oldPrice: 2499,
     rating: 4.8,
@@ -893,7 +914,7 @@ const homefavProducts = [
   },
   {
     id: 314,
-    title: "Boho Cushion Cover",
+    title: "Montana Furniture",
     price: 1299,
     oldPrice: 1799,
     rating: 4.6,
@@ -901,7 +922,7 @@ const homefavProducts = [
   },
   {
     id: 315,
-    title: "Handmade Ceramic Vase",
+    title: "Modern Furniture",
     price: 2999,
     oldPrice: 3999,
     rating: 4.9,
@@ -910,7 +931,7 @@ const homefavProducts = [
   },
   {
     id: 316,
-    title: "Minimal Wall Art",
+    title: "Study Tables",
     price: 1899,
     oldPrice: 2499,
     rating: 4.8,
@@ -918,7 +939,7 @@ const homefavProducts = [
   },
   {
     id: 317,
-    title: "Boho Cushion Cover",
+    title: "Dining Tables",
     price: 1299,
     oldPrice: 1799,
     rating: 4.6,
@@ -926,7 +947,7 @@ const homefavProducts = [
   },
   {
     id: 318,
-    title: "Handmade Ceramic Vase",
+    title: "Office Furniture",
     price: 2999,
     oldPrice: 3999,
     rating: 4.9,
@@ -934,7 +955,7 @@ const homefavProducts = [
   },
   {
     id: 319,
-    title: "Minimal Wall Art",
+    title: "Modern Futniture",
     price: 1899,
     oldPrice: 2499,
     rating: 4.8,
@@ -942,7 +963,7 @@ const homefavProducts = [
   },
   {
     id: 320,
-    title: "Boho Cushion Cover",
+    title: "Official Chairs",
     price: 1299,
     oldPrice: 1799,
     rating: 4.6,
@@ -1024,12 +1045,11 @@ function showCategory(category) {
 ========================= */
 function goCategory(name) {
   window.location.href =
-    "products.html?category=" + encodeURIComponent(name);
+    "fashion.html?category=" + encodeURIComponent(name);
 }
 
 /* DEFAULT LOAD */
 renderFashion("men");
-
 
 setTimeout(function () {
   document.querySelector(".fashion-c").style.display = "block";
@@ -1042,7 +1062,7 @@ setTimeout(function () {
 const fashionProducts = [
   {
     id: 501,
-    title: "Men Cotton Shirt",
+    title: "Cotton T-shirt",
     price: 1299,
     oldPrice: 1999,
     rating: 4.6,
@@ -1050,7 +1070,7 @@ const fashionProducts = [
   },
   {
     id: 502,
-    title: "Women Summer Dress",
+    title: "Summer T-shirts",
     price: 1899,
     oldPrice: 2599,
     rating: 4.8,
@@ -1058,7 +1078,7 @@ const fashionProducts = [
   },
   {
     id: 503,
-    title: "Kids Hoodie",
+    title: "Men Shirt",
     price: 999,
     oldPrice: 1499,
     rating: 4.5,
@@ -1066,7 +1086,7 @@ const fashionProducts = [
   },
   {
     id: 504,
-    title: "Men Denim Jacket",
+    title: "Men Modern shirt",
     price: 2999,
     oldPrice: 3999,
     rating: 4.7,
@@ -1082,7 +1102,7 @@ const fashionProducts = [
   },
   {
     id: 506,
-    title: "Women Summer Dress",
+    title: "Men Summer Dress",
     price: 1899,
     oldPrice: 2599,
     rating: 4.8,
@@ -1090,7 +1110,7 @@ const fashionProducts = [
   },
   {
     id: 507,
-    title: "Kids Hoodie",
+    title: "Slit-cuff Blazer",
     price: 999,
     oldPrice: 1499,
     rating: 4.5,
@@ -1098,7 +1118,7 @@ const fashionProducts = [
   },
   {
     id: 508,
-    title: "Men Denim Jacket",
+    title: "Men Formal Pants",
     price: 2999,
     oldPrice: 3999,
     rating: 4.7,
@@ -1106,7 +1126,7 @@ const fashionProducts = [
   },
   {
     id: 509,
-    title: "Men Cotton Shirt",
+    title: "Women Shirt",
     price: 1299,
     oldPrice: 1999,
     rating: 4.6,
@@ -1122,7 +1142,7 @@ const fashionProducts = [
   },
   {
     id: 511,
-    title: "Kids Hoodie",
+    title: "Tangerine Saree",
     price: 999,
     oldPrice: 1499,
     rating: 4.5,
@@ -1130,7 +1150,7 @@ const fashionProducts = [
   },
   {
     id: 512,
-    title: "Men Denim Jacket",
+    title: "women T-shirts",
     price: 2999,
     oldPrice: 3999,
     rating: 4.7,
@@ -1138,15 +1158,15 @@ const fashionProducts = [
   },
   {
     id: 513,
-    title: "Men Cotton Shirt",
+    title: "Women Red Blazer",
     price: 1299,
     oldPrice: 1999,
     rating: 4.6,
-    img: "./images/fashion1.webp"
+    img: "./images1/fashion/gym10.avif"  
   },
   {
     id: 514,
-    title: "Women Summer Dress",
+    title: "Women Hoodie",
     price: 1899,
     oldPrice: 2599,
     rating: 4.8,
@@ -1154,7 +1174,7 @@ const fashionProducts = [
   },
   {
     id: 515,
-    title: "Kids Hoodie",
+    title: "Men Modern shirt",
     price: 999,
     oldPrice: 1499,
     rating: 4.5,
@@ -1178,7 +1198,7 @@ const fashionProducts = [
   },
   {
     id: 518,
-    title: "Women Summer Dress",
+    title: "Men Summer Dress",
     price: 1899,
     oldPrice: 2599,
     rating: 4.8,
@@ -1186,7 +1206,7 @@ const fashionProducts = [
   },
   {
     id: 519,
-    title: "Kids Hoodie",
+    title: "Fancy Jeans",
     price: 999,
     oldPrice: 1499,
     rating: 4.5,
@@ -1194,24 +1214,13 @@ const fashionProducts = [
   },
   {
     id: 520,
-    title: "Men Denim Jacket",
+    title: "Men Denim Pant",
     price: 2999,
     oldPrice: 3999,
     rating: 4.7,
      img: "./images1/fashion/m9.jpg" 
   },
 ];
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1361,35 +1370,19 @@ function removeFromCart(index) {
   updateCartCount();
 }
 
+// expore gifts
+ function goToPics() {
+    document.getElementById("picsGrid").scrollIntoView({
+      behavior: "smooth"
+    });
+  }
 
 
 
 // ----------
 
-const slider = document.getElementById("productSlider");
-const nextBtn = document.getElementById("nextBtn");
-const prevBtn = document.getElementById("prevBtn");
-
-const scrollAmount = 300;
-
-nextBtn.addEventListener("click", () => {
-  slider.scrollBy({ left: scrollAmount, behavior: "smooth" });
-});
-
-prevBtn.addEventListener("click", () => {
-  slider.scrollBy({ left: -scrollAmount, behavior: "smooth" });
-});
 
 
 
 
-
-
-
-// start
-// fashion 
-
-/* =========================
-   DATA
-========================= */
 

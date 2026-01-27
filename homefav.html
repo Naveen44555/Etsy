@@ -32,7 +32,7 @@
         <h4>Elegant Tea Experience</h4>
         <p>₹4,999</p>
       </div>
-      <div class="arrow-btn">↗</div>
+      <!-- <div class="arrow-btn">↗</div> -->
     </div>
 
     <div class="fav-card">
@@ -41,7 +41,7 @@
         <h4>Elegant. Cozy. Inviting.</h4>
         <p>₹10,999</p>
       </div>
-      <div class="arrow-btn">↗</div>
+      <!-- <div class="arrow-btn">↗</div> -->
     </div>
 
     <div class="fav-card">
@@ -50,7 +50,7 @@
         <h4>Organize in Style</h4>
         <p>₹7,999</p>
       </div>
-      <div class="arrow-btn">↗</div>
+      <!-- <div class="arrow-btn">↗</div> -->
     </div>
 
     <div class="fav-card">
@@ -59,12 +59,11 @@
         <h4>Indulge in Elegance</h4>
         <p>₹4,999</p>
       </div>
-      <div class="arrow-btn">↗</div>
+      <!-- <div class="arrow-btn">↗</div> -->
     </div>
 
   </div>
 </div>
-
 
 
 <!--  -->
@@ -78,78 +77,86 @@
 
     
   <div class="slider-wrapper">
-    <!-- LEFT BUTTON -->
-    <button class="nav-button left" id="prevBtn">‹</button>
 
-    <!-- SLIDER -->
-    <div class="product-slider" id="productSlider">
+  <!-- LEFT BUTTON -->
+  <button class="nav-button left" id="prevBtn">‹</button>
 
-      <!-- CARD 1 -->
-      <div class="product-card">
-         <a href="#homefavGrid">
-        <img src="./images1/pics11/pics39.webp">
+  <!-- SLIDER -->
+  <div class="product-slider" id="productSlider">
+
+    <!-- CARD 1 -->
+    <div class="product-card">
+      <a href="#homefavGrid">
+        <img src="./images1/pics11/pics39.webp" alt="">
         <span class="tag">Unique Design</span>
         <h3>Minimalist Storage</h3>
         <p>Timeless Style</p>
         <span class="arrow">↗</span>
-      </div>
       </a>
+    </div>
 
-      <div class="product-card">
-         <a href="product.html">
-       <img src="./images1/pics11/pics40.webp">
+    <!-- CARD 2 -->
+    <div class="product-card">
+      <a href="product.html">
+        <img src="./images1/pics11/pics40.webp" alt="">
         <span class="tag">30% OFF</span>
         <h3>Dining Desk</h3>
         <p>Perfect Table for Gatherings</p>
         <span class="arrow">↗</span>
-      </div>
       </a>
+    </div>
 
-      <div class="product-card">
-         <a href="product.html">
-       <img src="./images1/pics11/pics44.webp">
+    <!-- CARD 3 -->
+    <div class="product-card">
+      <a href="product.html">
+        <img src="./images1/pics11/pics44.webp" alt="">
         <span class="tag">Top Sale Product</span>
         <h3>Modern Wood Buffet</h3>
         <p>Stylish Storage</p>
         <span class="arrow">↗</span>
-      </div>
       </a>
+    </div>
 
-
-      <div class="product-card">
-         <a href="product.html">
-       <img src="./images1/pics11/homefav3.webp">
+    <!-- CARD 4 -->
+    <div class="product-card">
+      <a href="product.html">
+        <img src="./images1/pics11/homefav3.webp" alt="">
         <span class="tag">Pine Wood</span>
         <h3>Wooden Comfy Chair</h3>
         <p>Designed for Cozy Moments</p>
         <span class="arrow">↗</span>
-      </div>
       </a>
+    </div>
 
-      <div class="product-card">
-         <a href="product.html">
-        <img src="./images1/pics11/pics38.webp">
+    <!-- CARD 5 -->
+    <div class="product-card">
+      <a href="product.html">
+        <img src="./images1/pics11/pics38.webp" alt="">
         <span class="tag">New Design</span>
         <h3>Modern Dining</h3>
         <p>Compact Rooms</p>
         <span class="arrow">↗</span>
-      </div>
       </a>
-      <div class="product-card">
-         <a href="product.html">
-         <img src="./images/homefav2.png">
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="product-card">
+      <a href="product.html">
+        <img src="./images/homefav2.png" alt="">
         <span class="tag">New Design</span>
         <h3>Modern Dining</h3>
         <p>Compact Rooms</p>
         <span class="arrow">↗</span>
-         </a>
-      </div>
-     
-<!-- RIGHT BUTTON  -->
+      </a>
+    </div>
+
+  </div>
+
+  <!-- RIGHT BUTTON -->
+  <button class="nav-button right" id="nextBtn">›</button>
 
 </div>
-<button class="nav-button right" id="nextBtn">›</button>
-  </div>
+
 <!-- end---- -->
 
 
@@ -318,9 +325,22 @@
 </footer>
 
 
-<script src="script.js"></script>
+<script src="script.js">
+  
+</script>
 <script>
   renderProducts(homefavProducts, "homefavGrid", true);
+    const slider = document.getElementById("productSlider");
+  const nextBtn = document.getElementById("nextBtn");
+  const prevBtn = document.getElementById("prevBtn");
+
+  nextBtn.addEventListener("click", () => {
+    slider.scrollBy({ left: slider.offsetWidth / 2, behavior: "smooth" });
+  });
+
+  prevBtn.addEventListener("click", () => {
+    slider.scrollBy({ left: -slider.offsetWidth / 2, behavior: "smooth" });
+  });
 </script>
 
 
