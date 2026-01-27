@@ -1065,7 +1065,7 @@ body {
 
 /* LARGE TABLETS */
 @media (max-width: 1024px) {
-  .gift-grid {
+.gift-grid {
     grid-template-columns: repeat(4, 180px);
     gap: 36px;
   }
@@ -1076,12 +1076,12 @@ body {
   .gift-first h1 {
     font-size: 34px;
   }
-  .nav-links button{
+
+ .nav-links button{
     font-size: x-large;
     /* border: 2px red solid; */
+    border-radius: 1px;
   }
-  
-
   .gift-first p {
     font-size: 16px;
   }
