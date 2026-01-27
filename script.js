@@ -81,7 +81,7 @@ const indexProducts = [
     title: "Hand Chain Gold Plated ",
     price: 499,
     oldPrice: 1000,
-    rating: 4.7,
+    rating: 4.1,
     img: "./images1/index_images/inimg2.webp"
   },
   {
@@ -97,7 +97,7 @@ const indexProducts = [
     title: "Sketch Portrait Hoodies",
     price: 900,
     oldPrice: 1500,
-    rating: 5.0,
+    rating: 4.4,
     img: "./images1/index_images/inimg5.avif"
   },
   {
@@ -105,7 +105,7 @@ const indexProducts = [
     title: "Couple gift frames ",
     price: 300,
     oldPrice: 500,
-    rating: 5.0,
+    rating: 4.7,
     img: "./images1/index_images/inimg3.webp"
   },
   {
@@ -113,7 +113,7 @@ const indexProducts = [
     title: "Personalised Name Bags ",
     price: 777,
     oldPrice: 1000,
-    rating: 5.0,
+    rating: 4.3,
    img: "./images1/index_images/inimg6.avif"
   },
   {
@@ -121,7 +121,7 @@ const indexProducts = [
     title: "Play Dough Christmas ",
     price: 2000,
     oldPrice: 3000,
-    rating: 5.0,
+    rating: 3.1,
     img: "./images1/index_images/inimg11.webp"
   },
   {
@@ -129,7 +129,7 @@ const indexProducts = [
     title: "Striped Border wall",
     price: 800,
     oldPrice: 1500,
-    rating: 5.0,
+    rating: 4.1,
     img: "./images1/index_images/inimg7.webp"
   },
   {
@@ -137,7 +137,7 @@ const indexProducts = [
     title: "Wood Printed Names",
     price: 199,
     oldPrice: 400,
-    rating: 5.0,
+    rating: 3.8,
     img: "./images1/index_images/inimg14.avif"
   },
   {
@@ -145,7 +145,7 @@ const indexProducts = [
     title: "Personalise Ribbons",
     price: 100,
     oldPrice: 300,
-    rating: 5.0,
+    rating: 4.6,
    img: "./images1/index_images/inimg10.avif"
   },
   {
@@ -153,7 +153,7 @@ const indexProducts = [
     title: "Trip bags Full Leather",
     price: 1000,
     oldPrice: 15000,
-    rating: 5.0,
+    rating: 4.5,
     img: "./images1/index_images/inimg12.avif"
   },
   {
@@ -161,7 +161,7 @@ const indexProducts = [
     title: "women Gold Necklace",
     price: 2000,
     oldPrice: 3000,
-    rating: 5.0,
+    rating: 4.4,
    img: "./images1/index_images/inimg13.avif"
   },
 ];
@@ -250,7 +250,7 @@ const productPageProducts = [
     title: "baby boy & Girl dolls",
     price: 755,
     oldPrice: 910,
-    rating: 5.0,
+    rating: 4.4,
      img: "./images1/index_images/inimg70.webp"
   },
   {
@@ -258,7 +258,7 @@ const productPageProducts = [
     title: "Men Pocket wear golden",
     price: 1042,
     oldPrice: 1488,
-    rating: 4.9,
+    rating: 3.9,
      img: "./images1/product_images/prr1.png"
   },
   {
@@ -274,7 +274,7 @@ const productPageProducts = [
     title: "hand t-shirts Art",
     price: 355,
     oldPrice: 510,
-    rating: 5.0,
+    rating: 4.7,
       img: "./images1/product_images/prr18.avif"
   },
   {
@@ -282,7 +282,7 @@ const productPageProducts = [
     title: "Floers card decoration",
     price: 142,
     oldPrice: 188,
-    rating: 4.9,
+    rating: 3.9,
       img: "./images1/product_images/prr3.webp"
   },
   {
@@ -298,7 +298,7 @@ const productPageProducts = [
     title: "golden with silver wear",
     price: 355,
     oldPrice: 510,
-    rating: 5.0,
+    rating: 4.6,
       img: "./images1/product_images/prr5.avif"
   },
   {
@@ -306,7 +306,7 @@ const productPageProducts = [
     title: "Personalized wallets",
     price: 142,
     oldPrice: 188,
-    rating: 4.9,
+    rating: 3.9,
       img: "./images1/product_images/prr6.webp"
   },
   {
@@ -314,7 +314,7 @@ const productPageProducts = [
      title: "Travel Carry bags",
     price: 2410,
     oldPrice: 4382,
-    rating: 4.6,
+    rating: 4.3,
      img: "./images1/product_images/prr7.webp"
   },
   {
@@ -322,7 +322,7 @@ const productPageProducts = [
     title: "personal carry wallet ",
     price: 3755,
     oldPrice: 7510,
-    rating: 5.0,
+    rating: 4.4,
       img: "./images1/product_images/prr8.webp"
   },
   {
@@ -338,7 +338,7 @@ const productPageProducts = [
     title: "Home decoration light",
     price: 2410,
     oldPrice: 4382,
-    rating: 4.6,
+    rating: 3.9,
      img: "./images1/product_images/prr10.avif"
   },
   {
@@ -347,7 +347,7 @@ const productPageProducts = [
     price: 1042,
     price: 755,
     oldPrice: 1510,
-    rating: 5.0,
+    rating: 4.3,
       img: "./images1/product_images/prr11.avif"
   },
   {
@@ -363,7 +363,7 @@ const productPageProducts = [
    title: "Robotics",
     price: 2410,
     oldPrice: 4382,
-    rating: 4.6,
+    rating: 3.6,
     img: "./images1/product_images/prr13.avif"
   },
   {
@@ -371,7 +371,7 @@ const productPageProducts = [
      title: "Cats pictures set",
     price: 3755,
     oldPrice: 7510,
-    rating: 5.0,
+    rating: 4.8,
       img: "./images1/product_images/prr14.avif"
   },
   {
@@ -387,7 +387,7 @@ const productPageProducts = [
      title: "Glass with Flowers",
     price: 410,
     oldPrice: 482,
-    rating: 4.6,
+    rating: 3.6,
      img: "./images1/product_images/prr16.webp"
   },
   {
@@ -404,7 +404,7 @@ const productPageProducts = [
     title: "Nave Necklace with white",
     price: 1042,
     oldPrice: 1488,
-    rating: 4.9,
+    rating: 3.9,
       img: "./images1/product_images/prr15.avif"
   },
   {
@@ -420,7 +420,7 @@ const productPageProducts = [
     title: "Mobile cover simple",
     price: 1042,
     oldPrice: 1488,
-    rating: 4.9,
+    rating: 3.7,
      img: "./images1/product_images/prr20.webp"
   },
   {
@@ -428,7 +428,7 @@ const productPageProducts = [
     title: "Apple cover with logo",
     price: 2410,
     oldPrice: 4382,
-    rating: 4.6,
+    rating: 4.1,
      img: "./images1/product_images/prr21.webp"
   },
   {
@@ -436,7 +436,7 @@ const productPageProducts = [
     title: "Mobile Temporal glass",
     price: 1042,
     oldPrice: 1488,
-    rating: 4.9,
+    rating: 4.1,
       img: "./images1/product_images/prr22.webp"
   },
   {
@@ -444,7 +444,7 @@ const productPageProducts = [
     title: "Camera with lens",
     price: 24410,
     oldPrice: 3382,
-    rating: 4.6,
+    rating: 3.8,
     img: "./images1/product_images/prr23.webp"
   },
   {
@@ -452,7 +452,7 @@ const productPageProducts = [
     title: "Hummingbird Glass Art",
     price: 3755,
     oldPrice: 7510,
-    rating: 5.0,
+    rating: 3.8,
     img: "./images1/product_images/prr24.webp"
   },
   {
@@ -460,7 +460,7 @@ const productPageProducts = [
     title: "Headphonw with black",
     price: 1042,
     oldPrice: 1488,
-    rating: 4.9,
+    rating: 3.9,
     img: "./images1/product_images/prr25.avif"
   },
   {
@@ -468,7 +468,7 @@ const productPageProducts = [
     title: "Women clothes",
     price: 2410,
     oldPrice: 4382,
-    rating: 4.6,
+    rating: 4.1,
      img: "./images1/product_images/prr26.avif"
   },
   {
@@ -476,7 +476,7 @@ const productPageProducts = [
     title: "wooden ladder",
     price: 1042,
     oldPrice: 1488,
-    rating: 4.9,
+    rating: 4.1,
   img: "./images1/product_images/prr29.webp"
   },
   {
@@ -484,7 +484,7 @@ const productPageProducts = [
     title: "Towels Fresh with colors",
     price: 2410,
     oldPrice: 4382,
-    rating: 4.6,
+    rating: 4.2,
   img: "./images1/product_images/prr27.avif"
   },
   {
@@ -492,7 +492,7 @@ const productPageProducts = [
     title: "dinner plates with spon",
     price: 1042,
     oldPrice: 1488,
-    rating: 4.9,
+    rating: 4.2,
     img: "./images1/product_images/prr28.webp"
   },
   {
@@ -1305,7 +1305,7 @@ function loadCart() {
       <div class="seller-row">
         <strong>WildWatches</strong>
         <span class="rating">⭐ ${item.rating} (3.3k)</span>
-        <span class="dots">•••</span>
+       
       </div>
 
       <div class="cart-main">
@@ -1314,32 +1314,24 @@ function loadCart() {
         <div class="cart-details">
           <h3>${item.title}</h3>
 
-          <span class="option">Custom Engraving: No Engraving</span>
-
+          
           <p class="sale">Sale ends 04 January</p>
 
           <div class="cart-actions">
-            <select>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-            </select>
-
-            <span>Edit</span>
+          
             <span>Save for later</span>
             <span onclick="removeFromCart(${index})" class="remove">Remove</span>
           </div>
         </div>
 
         <div class="cart-price">
-          <span class="discount">25% off</span>
           <h2>₹ ${item.price}</h2>
           <del>₹ ${item.oldPrice}</del>
         </div>
       </div>
 
       <div class="delivery">
-        Delivery: <strong>₹ 890</strong> (Get it by 12 Jan – 09 Feb)
+        Delivery:  (Get it by 12 Jan – 09 Feb)
       </div>
 
     </div>
