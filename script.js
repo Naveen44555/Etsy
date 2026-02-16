@@ -1017,9 +1017,9 @@ const fashionData = {
 /* =========================
    RENDER (FIXED ID)
 ========================= */
+
 function renderFashion(category) {
   const grid = document.getElementById("fashionid4");
-
   grid.innerHTML = fashionData[category].map(item => `
     <div class="fashion-card" onclick="goCategory('${item.name}')">
       <img src="${item.img}" alt="${item.name}">
@@ -1027,6 +1027,28 @@ function renderFashion(category) {
     </div>
   `).join("");
 }
+
+
+// function renderFashion(category) {
+//   const grid = document.getElementById("fashionid4");
+
+//   if (!grid) return; // Stop if element not present
+
+//   if (!fashionData[category]) {
+//     grid.innerHTML = "<p>No items found</p>";
+//     return;
+//   }
+
+//   grid.innerHTML = fashionData[category]
+//     .map(item => `
+//       <div class="fashion-card" onclick="goCategory('${item.name}')">
+//         <img src="${item.img}" alt="${item.name}">
+//         <span>${item.name}</span>
+//       </div>
+//     `)
+//     .join("");
+// }
+
 
 /* =========================
    TAB SWITCH (FIXED CLASSES)
@@ -1057,6 +1079,30 @@ setTimeout(function () {
 
 
 // end-------------------------------
+window.onload = function () {
+    const token = localStorage.getItem("access_token");
+
+    if (!token) {
+        window.location.href = "http://localhost:3000";
+    }
+};
+
+
+
+function logoutUser() {
+    // Remove stored tokens
+    localStorage.removeItem("access_token");
+    localStorage.removeItem("refresh_token");
+
+    // Optional: clear any other user data
+    localStorage.removeItem("username");
+
+    // Redirect to login page
+    window.location.href = "http://localhost:3000"; 
+}
+
+
+
 
 // fashion products all
 const fashionProducts = [

@@ -368,7 +368,6 @@ body {
 
 }
 
-
 .old-price {
   text-decoration: line-through;
   color: gray;
@@ -385,6 +384,14 @@ body {
 }
 .add-cart {
   margin-top: auto;   /* ✅ THIS LINE FIXES EVERYTHING */
+  border-radius: 20px;
+  padding: 7px;
+  background-color: white;
+  font-size: large;
+}
+.add-cart:hover{
+  background-color: black;
+  color: white;
 }
 
 /* More like text */
@@ -1507,15 +1514,4 @@ body {
     padding: 3px;
   }
 }
-
-
-
-
-
-
-
-
-
-
 /* --------------------- */
-
